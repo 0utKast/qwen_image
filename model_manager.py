@@ -144,20 +144,30 @@ class QwenImageGenerator:
             raise Exception(self.error_message)
 
         try:
+            from mlx_vlm.prompt_utils import apply_chat_template
+            
             print(f"Analizando imagen: {query}...")
-            # Aseguramos que el prompt tenga el formato adecuado para VLM
-            formatted_prompt = f"<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n<|im_start|>user\n<|vision|> {query}<|im_end|>\n<|im_start|>assistant\n"
+            
+            # Usar la utilidad oficial de mlx-vlm para formatear el prompt según el modelo
+            # Esto evita el error de "asistente de texto" al insertar los tokens de visión correctos
+            formatted_prompt = apply_chat_template(
+                self.vlm_processor,
+                self.vlm_model.config,
+                query,
+                num_images=1
+            )
             
             output = generate_vlm(
                 self.vlm_model, 
                 self.vlm_processor, 
+                formatted_prompt,
                 image_path, 
-                formatted_prompt, 
                 max_tokens=500
             )
             
             self.clear_vram() # Limpiar tras análisis
-            return output
+            # Devolvemos solo el texto para evitar mostrar el objeto GenerationResult completo en la UI
+            return output.text
         except Exception as e:
             traceback.print_exc()
             raise Exception(f"Fallo en motor VLM: {str(e)}")
