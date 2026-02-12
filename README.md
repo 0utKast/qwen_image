@@ -1,4 +1,4 @@
-# Qwen Studio Editor (Alpha v0.1.0) 🎨🚀
+# Qwen Studio Editor (Alpha v0.1.1) 🎨🚀
 
 Suite creativa multimodal local optimizada para **Apple Silicon (Mac Mini M4 Pro)**. Genera, edita e interroga imágenes usando la potencia de los núcleos MLX.
 
@@ -35,11 +35,13 @@ Suite creativa multimodal local optimizada para **Apple Silicon (Mac Mini M4 Pro
 
 ## 📈 Roadmap de Versiones
 
-- **v0.1.0-alpha** (Versión Actual):
+- **v0.1.1-alpha** (Estable):
+    - [x] Corregido motor VLM (Template de chat oficial).
+    - [x] Invertida lógica de Denoising Strength para mejor UX.
+    - [x] Añadido documento de resumen de proyecto.
+- **v0.1.0-alpha**:
     - [x] Integración de mflux y mlx-vlm.
     - [x] Soporte para Image-to-Image.
-    - [x] Traducción automática integrada.
-    - [x] Galería de sesión dinámica.
 
 ## ⚖️ Licencia
 Este proyecto es de uso personal y educativo. Los modelos FLUX y Qwen están sujetos a sus propias licencias de uso.
