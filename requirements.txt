@@ -1,0 +1,13 @@
+deep-translator
+gradio
+mflux
+python-dotenv
+torch
+torchvision
+mlx
+mlx-vlm
+customtkinter
+Pillow
+huggingface_hub
+numpy
+requests

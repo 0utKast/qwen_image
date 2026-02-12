@@ -1,0 +1,24 @@
+# Entornos virtuales
+venv/
+.venv/
+env/
+
+# Modelos (se deben descargar vía script)
+models/
+huggingface/
+
+# Salidas de imágenes
+outputs/
+
+# Configuración privada
+.env
+.DS_Store
+
+# Temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Gradio temporales
+flagged/
